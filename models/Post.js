@@ -33,9 +33,7 @@ type: DataTypes.INTEGER,
 references: {
 model: 'User',
 key: 'id',
-as: user_id,
 },
-onDelete: 'CASCADE'
 }
 
 },
