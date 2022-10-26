@@ -26,6 +26,7 @@
     "handlebars": "^4.7.7",
     "inquirer": "^9.1.4",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.25.3"
+    "sequelize": "^6.25.3",
+    "uniqid": "^5.4.0"
   }
 }
