@@ -14,7 +14,7 @@ CREATE TABLE post (
     postdate DATE NOT NULL,
     title VARCHAR(100) NOT NULL,
     content TEXT(235) NOT NULL,
-    isUrl VARCHAR(100),
+    -- isUrl VARCHAR(100),
     user_id INT, 
     FOREIGN KEY (user_id),
     REFERENCES user(id),
@@ -27,8 +27,8 @@ CREATE TABLE video (
     FOREIGN KEY (post_id),
     REFERENCES post(id),
     ON DELETE SET NULL,
-    post_isUrl VARCHAR,
-    FOREIGN KEY (post_isUrl),
-    REFERENCES post(isUrl),
-    ON DELETE SET NULL
+    -- post_isUrl VARCHAR,
+    -- FOREIGN KEY (post_isUrl),
+    -- REFERENCES post(isUrl),
+    -- ON DELETE SET NULL
 );
