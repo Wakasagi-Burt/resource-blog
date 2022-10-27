@@ -31,7 +31,10 @@ email: {
 
 },
 {
-    sequelize
+    sequelize, 
+    timestamps: false,
+    freezeTableName: true,
+    modelName: 'user',
 }
 );
 
