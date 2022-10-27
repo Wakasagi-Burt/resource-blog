@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
     console.log(latestPosts);
     res.json(latestPosts);  // sanity check
 
-    req.render('homepage'); // render a page and send post data
+    res.render('homepage'); // render a page and send post data
   } catch (err) {
     res.status(500).json(err);  
   }

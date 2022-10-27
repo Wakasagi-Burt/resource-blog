@@ -1,0 +1,16 @@
+.head1 {
+    margin-left: 5px;
+    padding: 15px;
+}
+
+.cont1 {
+    position: relative;
+    left: 50px;
+    top: 67px;
+}
+
+.cont2 {
+    position: relative;
+    right: 60px;
+    bottom: 500px;
+}
