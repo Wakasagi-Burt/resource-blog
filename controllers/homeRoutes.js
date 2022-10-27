@@ -14,6 +14,8 @@ router.get('/', async (req, res) => {
     });
     console.log(latestPosts);
     res.json(latestPosts);  // sanity check
+    // api call: HackerNews Api
+    technews();
 
     req.render('homepage'); // render a page and send post data
   } catch (err) {
@@ -47,5 +49,37 @@ router.get('/login', (req, res) => {
     }
     res.render('login');
   });
-  
+
+
+  const technews = () => {
+
+    fetch('https://hacker-news.firebaseio.com/v0/beststories/.json?print=pretty', {
+      method: 'GET', //GET is the default.
+       // include, *same-origin, omit
+      redirect: 'follow', // manual, *follow, error
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        for(i = 0; i < 5; i++) {
+          let id = data[i];
+          apicallout(id);
+        }
+      });
+    
+    const apicallout = (idv) => {
+      fetch(`https://hacker-news.firebaseio.com/v0/item/${idv}.json?print=pretty`, {
+      method: 'GET', //GET is the default.
+       // include, *same-origin, omit
+      redirect: 'follow', // manual, *follow, error
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+          let title = data['title'];
+          let author = data['by'];
+          let url = data['url'];
+    })};}
 module.exports = router;
