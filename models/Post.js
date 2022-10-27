@@ -31,7 +31,7 @@ allowNull: false,
 user_id: {
 type: DataTypes.INTEGER,
 references: {
-model: 'User',
+model: 'user',
 key: 'id',
 },
 }
@@ -39,7 +39,10 @@ key: 'id',
 },
 {
     sequelize,
-    timestamps: true,
+    freezeTableName: true,
+    timestamps: false,
+    modelName: 'post',
+    
 }
 );
 

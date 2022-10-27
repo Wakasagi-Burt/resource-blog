@@ -8,13 +8,13 @@ const withAuth = require('../utils/auth');
 // HOME PAGE ROUTE - user lands here
 router.get('/', async (req, res) => {
   try {  // try looking for latest post
-    const postData = await Post.findAll(); // filter that down w/ the config to get the ones you want
-    console.log(postData) // sanity check
-    const latestPosts = postData.map(function(post) { // clean post data
-      return post.get({plain: true});  // <-- this is the object that cleans up the data from the sequilaze object garbage
-    });
-    console.log(latestPosts);
-    res.json(latestPosts);  // sanity check
+    // const postData = await Post.findAll(); // filter that down w/ the config to get the ones you want
+    // console.log(postData) // sanity check
+    // const latestPosts = postData.map(function(post) { // clean post data
+    //   return post.get({plain: true});  // <-- this is the object that cleans up the data from the sequilaze object garbage
+    // });
+    // console.log(latestPosts);
+    // res.json(latestPosts);  // sanity check
 
     res.render('homepage'); // render a page and send post data
   } catch (err) {
