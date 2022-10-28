@@ -8,7 +8,7 @@ const controllers = require('./controllers');
 const Model = require('./models');
 
 const sequelize = require('./config/connection');
-// const sequelizestore = require('connect-session-sequelize')(session.store);
+const Sequelizestore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -23,12 +23,12 @@ const sess = {
   cookie: {},
   resave: false,
   saveUnintialized: true,
-//   store: new sequelizeStore({
+  store: new Sequelizestore({
     db:sequelize
-//   })
+  })
 };
 
-// app,use(session(sess));
+app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

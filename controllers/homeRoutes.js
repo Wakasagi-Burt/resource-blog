@@ -4,34 +4,28 @@ const withAuth = require('../utils/auth');
 const handleBar = require("../views/layouts/homepage.handlebars")
 
 // given a user lands on our page
-// when they page loads
-// then they are show a list of latest post extracted from our db
 // HOME PAGE ROUTE - user lands here
 router.get('/', async (req, res) => {
   try {  // try looking for latest post
-
-    // const postData = await Post.findAll(); // filter that down w/ the config to get the ones you want
-    // console.log(postData) // sanity check
-    // const latestPosts = postData.map(function(post) { // clean post data
-    //   return post.get({plain: true});  // <-- this is the object that cleans up the data from the sequilaze object garbage
-    // });
-    // console.log(latestPosts);
-    // res.json(latestPosts);  // sanity check
-
-    
-    // api call: HackerNews Api
-    // technews();
-
-
     res.render('homepage'); // render a page and send post data
   } catch (err) {
     res.status(500).json(err);  
   }
 });
-
+// general resource route here user lands here
 router.get('/generalresource', (req, res) => {
   res.render('generalresource')
 })
+
+// discussion handlebars route here user lands here
+router.get('/discussion', async (req, res) => {
+  try {  
+    res.render('discussion'); 
+  } catch (err) {
+    res.status(500).json(err);  
+  }
+});
+
 
 // GIVEN a user clicks and is not loged-in, 
 // THEN they are redirected to the login page.
@@ -51,34 +45,14 @@ router.get('/postRoutes', withAuth, async (req, res) => {
 
 //If a session exits
 //redirect the request to the Discussion Post Page
-router.get('/login', (req, res) => {
+router.get('/signup', (req, res) => {
     // If a session exists, redirect the request to the Discussion Post Page
-    if (req.session.logged_in) {
-      res.redirect('/profile');
-      return;
-    }
-    res.render('login');
+    // if (req.session.logged_in) {
+    //   res.redirect('/profile');
+    //   return;
+    // }
+    res.render('signup');
   });
-
-
-  /*
-    GETTING ARTICLES FROM
-    ANOTHER SITE AS JSON AND INSERTING
-    THEM INTO YOUR OWN HANDLEBAR TEMPLATE
-  */
-
-  // FIND A API THAT GIVES BACK AND ARRAY OR ARTICLES
-  /*
-  [
-    {
-      title: 'jidfeoswfa',
-      date: 'fjiewoaf',
-      id: 'iwoefiewof',
-      description: 'fioreangkragrtesgtreafreagvaebrtsr'
-    }
-  ]
-  */
-
 
 
 
