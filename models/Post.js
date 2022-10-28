@@ -39,10 +39,17 @@ key: 'id',
 },
 {
     sequelize,
+<<<<<<< HEAD
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'post',
+=======
     freezeTableName: true,
     timestamps: false,
     modelName: 'post',
     
+>>>>>>> ac4116ed1889598526bf75b843f16f93a37381c0
 }
 );
 

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {User} = require('../../models');
 
-//USER LOGIN
+//CREATE USER
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+//USER LOGIN
 router.post('/login', async (req, res) => {
     try {
       // Find the user who matches the posted e-mail address
