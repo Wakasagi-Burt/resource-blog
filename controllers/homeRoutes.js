@@ -8,6 +8,7 @@ const withAuth = require('../utils/auth');
 // HOME PAGE ROUTE - user lands here
 router.get('/', async (req, res) => {
   try {  // try looking for latest post
+
     // const postData = await Post.findAll(); // filter that down w/ the config to get the ones you want
     // console.log(postData) // sanity check
     // const latestPosts = postData.map(function(post) { // clean post data
@@ -16,11 +17,20 @@ router.get('/', async (req, res) => {
     // console.log(latestPosts);
     // res.json(latestPosts);  // sanity check
 
+    
+    // api call: HackerNews Api
+    technews();
+
+
     res.render('homepage'); // render a page and send post data
   } catch (err) {
     res.status(500).json(err);  
   }
 });
+
+router.get('/generalresource', (req, res) => {
+  res.render('generalresource')
+})
 
 // GIVEN a user clicks and is not loged-in, 
 // THEN they are redirected to the login page.
@@ -48,5 +58,55 @@ router.get('/login', (req, res) => {
     }
     res.render('login');
   });
-  
+
+  /*
+    GETTING ARTICLES FROM
+    ANOTHER SITE AS JSON AND INSERTING
+    THEM INTO YOUR OWN HANDLEBAR TEMPLATE
+  */
+
+  // FIND A API THAT GIVES BACK AND ARRAY OR ARTICLES
+  /*
+  [
+    {
+      title: 'jidfeoswfa',
+      date: 'fjiewoaf',
+      id: 'iwoefiewof',
+      description: 'fioreangkragrtesgtreafreagvaebrtsr'
+    }
+  ]
+  */
+
+
+  const technews = () => {
+
+    fetch('https://hacker-news.firebaseio.com/v0/beststories/.json?print=pretty', {
+      method: 'GET', //GET is the default.
+       // include, *same-origin, omit
+      redirect: 'follow', // manual, *follow, error
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        for(i = 0; i < 5; i++) {
+          let id = data[i];
+          apicallout(id);
+        }
+      });
+    
+    const apicallout = (idv) => {
+      fetch(`https://hacker-news.firebaseio.com/v0/item/${idv}.json?print=pretty`, {
+      method: 'GET', //GET is the default.
+       // include, *same-origin, omit
+      redirect: 'follow', // manual, *follow, error
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+          let title = data['title'];
+          let author = data['by'];
+          let url = data['url'];
+    })};}
 module.exports = router;
