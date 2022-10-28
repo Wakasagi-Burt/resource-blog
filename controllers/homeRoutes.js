@@ -28,6 +28,10 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/generalresource', (req, res) => {
+  res.render('generalresource')
+})
+
 // GIVEN a user clicks and is not loged-in, 
 // THEN they are redirected to the login page.
 // DISCUSSION-POSTS redirect
@@ -54,6 +58,27 @@ router.get('/login', (req, res) => {
     }
     res.render('login');
   });
+
+
+  /*
+    GETTING ARTICLES FROM
+    ANOTHER SITE AS JSON AND INSERTING
+    THEM INTO YOUR OWN HANDLEBAR TEMPLATE
+  */
+
+  // FIND A API THAT GIVES BACK AND ARRAY OR ARTICLES
+  /*
+  [
+    {
+      title: 'jidfeoswfa',
+      date: 'fjiewoaf',
+      id: 'iwoefiewof',
+      description: 'fioreangkragrtesgtreafreagvaebrtsr'
+    }
+  ]
+  */
+
+
 
 
   const technews = () => {
