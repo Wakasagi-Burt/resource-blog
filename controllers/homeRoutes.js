@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {User, Post, Video} = require('../models');
 const withAuth = require('../utils/auth');
+const handleBar = require("../views/layouts/homepage.handlebars")
 
 // given a user lands on our page
 // when they page loads
