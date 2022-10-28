@@ -59,6 +59,7 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
+
   /*
     GETTING ARTICLES FROM
     ANOTHER SITE AS JSON AND INSERTING
@@ -76,6 +77,8 @@ router.get('/login', (req, res) => {
     }
   ]
   */
+
+
 
 
   const technews = () => {
