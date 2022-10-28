@@ -31,21 +31,18 @@ email: {
 
 },
 {
-<<<<<<< HEAD
+
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-=======
-    sequelize, 
-    timestamps: false,
-    freezeTableName: true,
->>>>>>> ac4116ed1889598526bf75b843f16f93a37381c0
     modelName: 'user',
 }
 );
 
 module.exports = User;
+
+
 
 
 
