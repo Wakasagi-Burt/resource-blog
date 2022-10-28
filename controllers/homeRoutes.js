@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 
     
     // api call: HackerNews Api
-    technews();
+    // technews();
 
 
     res.render('homepage'); // render a page and send post data
