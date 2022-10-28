@@ -55,7 +55,14 @@ router.get('/signup', (req, res) => {
     // }
     res.render('signup');
   });
-
+  router.get('/profile', (req, res) => {
+    // If a session exists, redirect the request to the Discussion Post Page
+    // if (req.session.logged_in) {
+    //   res.redirect('/profile');
+    //   return;
+    // }
+    res.render('profile');
+  });
 
 
   const technews = () => {
