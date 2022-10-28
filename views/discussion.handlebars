@@ -1,5 +1,33 @@
 
-<form>
+<div class="col-12">
+  <div class="col-md-6 text-center">
+    <h2>{{title}}</h2>
+    <p>Posted by {{user.username}} | Date: {{postdate}}</p>
+  </div>
+    <div class="col-md-6 text-center">
+    <p>{{content}}</p>
+    <p>{{videoLink}} or {{relatedLink}}</p>
+    <button class="btn btn-primary">Post My Story</button>
+  </div>
+</div>
+
+<hr>
+
+<!-- For loop to display list of stories posted in database -->
+{{#each post as |post|}}
+<div class="row mb-4 post"</div>
+    <div class="col-md-5">
+      <h2><a href="/post/{{post.id}}">{{post.title}}</a></h2>
+      <p>Posted by: {{post.username}} on {{post.postdate}}</p>
+    </div>
+    <div class="col-md-7">
+      {{post.content}}
+      <hr>
+    </div>
+ </div> 
+ {{/each}}
+
+{{!-- <form>
   <div class="form-group">
     <label for="exampleFormControlInput1">Username</label>
     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -12,5 +40,5 @@
     <label for="exampleFormControlTextarea1">Reply</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
-</form>
+</form> --}}
 

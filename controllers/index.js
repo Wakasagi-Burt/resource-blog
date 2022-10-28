@@ -1,4 +1,4 @@
-const router = require('express').Router();
+const router = require('express').Router(); //Router object class chains URL's together
 
 const apiRoutes = require('./api');
 const homeRoutes = require('./homeRoutes');
