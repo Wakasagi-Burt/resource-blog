@@ -2,13 +2,13 @@ use techwreck_db;
 
 INSERT INTO USER ( id ,username, email, password ) 
 Values
-(1,'hiren_patel','hiren@yahoo.com','hiu1234'),
-(2,'brett_shulmen','brett@yahoo.com','hjhj5678'),
-(3, 'alan_jose','jose@yahoo.com','kjgl9012'),
-(4,'nordleen_defrias','nordleen@yahoo.com','iuyuyg3456');
+('hiren_patel','hiren@yahoo.com','hiu1234'),
+('brett_shulmen','brett@yahoo.com','hjhj5678'),
+('alan_jose','jose@yahoo.com','kjgl9012'),
+('nordleen_defrias','nordleen@yahoo.com','iuyuyg3456');
 
 
-INSERT INTO post ( user_id, username, postdate, title, content,) 
+INSERT INTO post ( user_id, username, postdate, title, content) 
 VALUES
 (1,'hiren_patel','10/26/2022','title1','i am a webdeveloper'),
 (2,'brett_shulmen','10/25/2022','title2','i am a student'),
