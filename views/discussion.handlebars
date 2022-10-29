@@ -1,19 +1,39 @@
+ <!-- Form for posting a Blog Post -->
+ <div class="col-6 offset-lg-3">
+<div class="row justify-content-center">
+  <form class="new-post-form">
+    <h2>Share Your Techy Journey Experiences With Us!</h2>
+    <hr>
+    <div class="form-group">
+      <input class="form-control" type="hidden" id="user_id" name="user_id" value="{{user_id}}">
 
-<div class="col-12">
-  <div class="col-md-6 text-center">
-    <h2>{{title}}</h2>
-    <p>Posted by {{user.username}} | Date: {{postdate}}</p>
-  </div>
-    <div class="col-md-6 text-center">
-    <p>{{content}}</p>
-    <p>{{videoLink}} or {{relatedLink}}</p>
-    <button class="btn btn-primary">Post My Story</button>
-  </div>
+      <div class="form-group">
+      <label for="title">Post Title: </label>
+      <textarea class="form-control" id="title" name="title" rows="4" cols="25">{{title}}</textarea>
+      </div>
+
+      <div class="form-group">
+      <label for="postdate">Post Date:</label>
+      <textarea class="form-control" type="date" id="postdate" name="postdate" rows="1" cols="25">{{postdate}}</textarea>
+      </div>
+
+      <div class="form-group">
+      <label for="content">Comment/Story:</label>
+      <textarea class="form-control" name="content" id="content" cols="30" rows="10">{{content}}</textarea>
+      </div>
+
+      <div class="form-group">
+      <label for="username">Your Name</label>
+      <textarea class="form-control" name="username" id="username" cols="30" rows="10">{{username}}</textarea>
+      </div>
+      
+      <button class="form-control" type="submit" value="Submit">Post My Story</button>
+  </form>
 </div>
-
+</div>
 <hr>
 
-<!-- For loop to display list of stories posted in database -->
+<!-- For loop to display list of blog posts in database -->
 {{#each post as |post|}}
 <div class="row mb-4 post"</div>
     <div class="col-md-5">
@@ -27,18 +47,4 @@
  </div> 
  {{/each}}
 
-{{!-- <form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Username</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Discussion Topic</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Reply</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-</form> --}}
-
+<script src="/js/addPost.js"></script>
