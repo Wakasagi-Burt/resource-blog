@@ -3,7 +3,7 @@ const {Post} = require('../../models/Post');
 const withAuth = require('../../utils/auth');
 
 // Create a new Blog Post
-router.post('/', withAuth, async (req, res) => {
+router.post('/discussion', withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({     // new postBlog object
       title: req.body.title,
@@ -18,6 +18,7 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 
 //Sending the data to the model and view
 router.put('/:id', async (req, res) => {  //makes promise
@@ -40,5 +41,26 @@ router.put('/:id', async (req, res) => {  //makes promise
     res.status(500).json(500);
   }
 });
+
+// Delete route
+// router.delete('/:id', withAuth, async (req, res) => {
+//   try {
+//     const postData = await Post.destroy({  // Destroy becasue deleting
+//       where: {
+//         id: req.params.id,
+//         user_id: req.session.user_id,
+//       },
+//     });
+//     console.log(req);
+//     if (!postData) {
+//       res.status(404).json({ message: 'No post found with this id!' });
+//       return;
+//     }
+
+//     res.status(200).json(postData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
