@@ -1,10 +1,8 @@
 const path = require('path');
 const express = require('express');
-
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const controllers = require('./controllers');
-// const helpers = require('./utils/helpers');
 const Model = require('./models');
 
 const sequelize = require('./config/connection');
@@ -19,8 +17,18 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({});
 
 const sess = {
+
   secret: 'resource blog',
   cookie: {},
+
+  secret: 'Tech blog secret',
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
+
   resave: false,
   saveUnintialized: true,
   store: new Sequelizestore({
