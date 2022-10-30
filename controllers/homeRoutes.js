@@ -7,7 +7,7 @@ const handleBar = require("../views/homepage.handlebars")
 // HOME PAGE ROUTE - user lands here
 router.get('/', async (req, res) => {
   try {  // try looking for latest post
-
+    
     // this is where we are going to do postdata
     res.render('homepage'); // render a page and send post data
   } catch (err) {
@@ -65,35 +65,4 @@ router.get('/signup', (req, res) => {
   });
 
 
-  const technews = () => {
-
-    fetch('https://hacker-news.firebaseio.com/v0/beststories/.json?print=pretty', {
-      method: 'GET', //GET is the default.
-       // include, *same-origin, omit
-      redirect: 'follow', // manual, *follow, error
-    })
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        for(i = 0; i < 5; i++) {
-          let id = data[i];
-          apicallout(id);
-        }
-      });
-    
-    const apicallout = (idv) => {
-      fetch(`https://hacker-news.firebaseio.com/v0/item/${idv}.json?print=pretty`, {
-      method: 'GET', //GET is the default.
-       // include, *same-origin, omit
-      redirect: 'follow', // manual, *follow, error
-    })
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-          let title = data['title'];
-          let author = data['by'];
-          let url = data['url'];
-    })};}
 module.exports = router;
