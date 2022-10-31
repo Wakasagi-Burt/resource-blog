@@ -17,7 +17,7 @@ username: {
 
 },
 postdate: {
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
     allowNull: false,
 }
 ,
@@ -25,7 +25,7 @@ title: {
     type: DataTypes.STRING,
     allowNull: false,},
 content: {
-type: DataTypes.TEXT,
+type: DataTypes.STRING,
 allowNull: false,
 },
 user_id: {
