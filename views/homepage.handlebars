@@ -1,25 +1,31 @@
-        <div class="container ml-2 cont1">
-          <div class="list-group w-50">
-            <h1>Latest Posts</h1>
-            <a href="#" class="list-group-item list-group-item-action">
-              <div class="d-flex w-50 justify-content-between">  
+        <div class="row justify-content-around">
+          <div class="container col-6 cont1">
+            <div class="list-group w-50">
+              <h1>Latest Posts</h1>
+              <a href="/discussion" class="list-group-item list-group-item-action">
+                <div class="d-flex w-50 justify-content-between">  
+                <div>
+                  {{#each Posts}}
+                    {{if @index '<' 5}}
+                      <h2>{{capitalize post.title}}</h2>
+                      <div>Post by {{post.username}} on {{format_date post.postdate}}</div>
+                      <div>{{post.content}}</div>
+                      <hr>
+                  {{/each}}
+                </div>
+                </div>
+              </a>
               </div>
-              <div>
-                {{!-- {{  }} --}}
-              </div>
-            </a>
             </div>
-          </div>
 
-          <div class="container mr-2 cont2">
-            <div class="list-group w-60">
-                <h1>Tech News</h1>
-                <a href="#" class="list-group-item list-group-item-action">
-                  <div class="d-flex w-60 justify-content-between">
-                    </div>
-                    <div>
-                      {{!-- {{  }} --}}
-                    </div>
-                </a>
+            <div class="container col-6 cont2">
+              <div class="list-group w-60">
+                  <h1>Tech News</h1>
+                  <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-60 justify-content-between">
+                        {{!-- {{  }} --}}
+                      </div>
+                  </a>
+              </div>
             </div>
           </div>
