@@ -1,3 +1,5 @@
+
+
 .head1 {
     margin-left: 5px;
     padding: 15px;
@@ -23,4 +25,34 @@
 }
 .navbar {
     display: inline-flex;
+}
+
+.dischead {
+    padding-top: 20px;
+    font-size: 40px;
+}
+
+.homehead {
+    font-size: 60px;
+}
+
+.navtitle {
+    font-size: 25px;
+}
+
+.containul {
+    padding: 10px;
+    background-color: rgb(212, 211, 211);
+    
+}
+
+.postcont {
+    padding: 10px;
+    background-color: rgb(212, 211, 211);
+    
+}
+
+.labhead {
+    font-size: 20px;
+    font-weight: 600;
 }

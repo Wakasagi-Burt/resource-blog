@@ -11,15 +11,15 @@
     
 <main>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/"><img src="/img/techwreck.png" width="25%" alt="TechWreck Logo"></a>
+  <a class="navbar-brand" href="/"><img src="/img/techwreck.png" width="40%" alt="TechWreck Logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/generalresource">General Resources</a>
-      <a class="nav-item nav-link active" href="/discussion">Discussion Posts</a>
-      <a class="nav-item nav-link active" href="/videos">Videos</a>
+      <a class="nav-item nav-link active navtitle" href="/generalresource">General Resources</a>
+      <a class="nav-item nav-link active navtitle" href="/discussion">Discussion Posts</a>
+      <a class="nav-item nav-link active navtitle" href="/videos">Videos</a>
       {{!-- <a class="nav-item nav-link active" href="/signup">Sign-in/Sign-up</a> --}}
     </div>
   </div>
@@ -29,6 +29,7 @@
         <button class="no-button" id="logout">logout</button>
         {{else}}
         <a href="./api/users/signup">Sign-in/Sign-up</a>
+
         {{/if}}
 </nav>
         {{{body}}}
@@ -38,5 +39,7 @@
   <script src="/js/logout.js"></script>
   {{/if}}
   </body>
-  
+  <footer>
+    
+  </footer>
   </html>
