@@ -42,7 +42,7 @@ const loginFormHandler = async (event) => {
         console.log(response);
         document.location.replace('/profile');
       } else {
-        alert(response.statusText);
+        alert("Failed to sign up");
       }
     }
   };

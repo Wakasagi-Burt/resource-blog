@@ -21,7 +21,7 @@ const sess = {
   secret: 'resource blog',
   cookie: {},
 
-  secret: 'Tech blog secret',
+  secret: 'resource blog',
   cookie: {
     maxAge: 300000,
     httpOnly: true,
