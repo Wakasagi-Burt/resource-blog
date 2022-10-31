@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const {User} = require('../../models');
+const {User} = require('../../models/User');
 
 //CREATE USER
-router.post('/signup', async (req, res) => {
+router.post('/signup', async (req, res) => {  //<-- this route might be incorrect only '/'
   try {
     const userData = await User.create(req.body);
     console.log(userData);
@@ -16,26 +16,20 @@ router.post('/signup', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 //USER LOGIN
 router.post('/login', async (req, res) => {
     try {
-      // Find the user who matches the posted e-mail address
-      const userData = await User.findOne({ where: { email: req.body.email } });
-  
+      const userData = await User.findOne({ where: { email: req.body.email } });// Find the user who matches the posted e-mail address
       if (!userData) {
-        res
-          .status(400)
-          .json({ message: 'Incorrect email or password, please try again' });
+        res.status(400).json({ message: 'Incorrect email or password, please try again' });
         return;
       }
-  
       // Verify the posted password with the password store in the database
       const validPassword = await userData.checkPassword(req.body.password);
   
       if (!validPassword) {
-        res
-          .status(400)
-          .json({ message: 'Incorrect email or password, please try again' });
+        res.status(400).json({ message: 'Incorrect email or password, please try again' });
         return;
       }
   
@@ -48,6 +42,7 @@ router.post('/login', async (req, res) => {
       });
   
     } catch (err) {
+      console.log(err);
       res.status(400).json(err);
     }
   });
@@ -55,8 +50,7 @@ router.post('/login', async (req, res) => {
   //USER LOGOUT
   router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
-      // Remove the session variables
-      req.session.destroy(() => {
+      req.session.destroy(() => {  // Remove the session variables
         res.status(204).end();
       });
     } else {
