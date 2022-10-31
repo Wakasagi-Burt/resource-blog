@@ -17,12 +17,12 @@ Video.belongsTo(Post, {
     onDelete: 'CASCADE'
 });
 
-Video.belongsToMany(User, {
-    through: {
-        model: Post,
-        unique: false
-    },
-    as: 'user_video'
-});
+// Video.belongsToMany(User, {
+//     through: {
+//         model: Post,
+//         unique: false
+//     },
+//     as: 'user_video'
+// });
 
 module.exports = {User, Post, Video};

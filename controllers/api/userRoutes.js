@@ -2,9 +2,15 @@ const router = require('express').Router();
 const {User} = require('../../models/User');
 
 //CREATE USER
-router.post('/signup', async (req, res) => {  //<-- this route might be incorrect only '/'
+router.post('/api/users/signup', async (req, res) => {  //<-- this route might be incorrect only '/'
   try {
-    const userData = await User.create(req.body);
+    const userData = await User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password
+    })
+    
+    
     console.log(userData);
     req.session.save(() => {
       req.session.user_id = userData.id;
