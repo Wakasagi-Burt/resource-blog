@@ -1,4 +1,10 @@
-
+html { 
+    background: url(/img/connecting-people.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
 .head1 {
     margin-left: 5px;
@@ -25,6 +31,8 @@
 }
 .navbar {
     display: inline-flex;
+    /* margin-left: 10px;
+    font-size: 18pt; */
 }
 
 .dischead {
@@ -37,25 +45,38 @@
 }
 
 .navtitle {
-    font-size: 25px;
+    font-size: 20px;
+    margin-left: 20px;
 }
 
 .containul {
     padding: 10px;
     background-color: rgb(212, 211, 211);
-    
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .postcont {
     padding: 10px;
     background-color: rgb(212, 211, 211);
+    border-radius: 10px;
     
 }
-
 .labhead {
     font-size: 20px;
     font-weight: 600;
 }
+
+.genhead {
+    margin-bottom: 10px;
+}
+.loginSide {
+    margin-top: 30px;
+}
+
+.signupSide {
+    margin-top: 30px;
+    margin-bottom: 30px;
 
 .logform {
     position: relative;

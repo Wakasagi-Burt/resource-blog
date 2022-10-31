@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
 });
 
 // POST VIDEO by end user - NOT automatic
-router.post('/', withAuth, async (req, res) => {
+router.post('/video', withAuth, async (req, res) => {
   try {
     const newVideo = await Video.create({
       ...req.body,

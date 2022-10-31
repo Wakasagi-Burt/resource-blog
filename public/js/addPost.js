@@ -7,8 +7,8 @@ const postFormHandler = async  (event)=> {
     const content = document.querySelector('#content').value.trim();
     const username = document.querySelector('#username').value.trim();
     // const user_id = document.querySelector('#user_id');
-
-    const serverResponse =  fetch('./api/discussion', {
+    console.log(title,postdate,content,username);
+    const serverResponse =  fetch('/api/posts/discussion', {
         method: 'POST',
         body: JSON.stringify(
         {
