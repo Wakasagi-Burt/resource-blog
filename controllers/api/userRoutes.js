@@ -1,11 +1,18 @@
 const router = require('express').Router();
-const {User} = require('../../models/User');
+const {User, post, video} = require('../../models');
+const withAuth = require('../../utils/auth');
+
+
+
+
+
 
 //CREATE USER
-router.post('/signup', async (req, res) => {
+router.post('/signup', async (req, res) => 
+{
+  console.log(req);
   try {
     const userData = await User.create(req.body);
-    console.log(userData);
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;

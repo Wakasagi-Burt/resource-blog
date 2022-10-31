@@ -8,7 +8,7 @@ async function postHandler (e) {
     const username = document.querySelector('#username');
     const user_id = document.querySelector('#user_id');
 
-    const serverResponse = await fetch('/api/posts', {
+    const serverResponse = await fetch('/api/post', {
         method: 'POST',
         body: JSON.stringify(
         {
