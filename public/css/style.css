@@ -56,3 +56,13 @@
     font-size: 20px;
     font-weight: 600;
 }
+
+.logform {
+    position: relative;
+    left: 200px;
+}
+
+.signform {
+    position: relative;
+    left: 300px;
+}
