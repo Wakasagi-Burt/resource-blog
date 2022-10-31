@@ -14,3 +14,6 @@
     right: 60px;
     bottom: 500px;
 }
+.navbar {
+    display: inline-flex;
+}

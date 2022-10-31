@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const {Video} = require('../../models');
-const {Post} = require('../../models');
+const {Video} = require('../../models/Video');
+const {Post} = require('../../models/Post');
 const withAuth = require('../../utils/auth');
 
 // EXTRACT VIDEO - from end-user post - automatic
