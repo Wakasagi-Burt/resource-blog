@@ -5,14 +5,21 @@
 
 .cont1 {
     position: relative;
-    left: 50px;
-    top: 67px;
+    top: 50px;
+    left:150px;
+    margin: 10px;
+    /* left: 50px; */
+    /* top: 67px; */
+    /* margin-right: 125px; */
+    /* margin: 50px; */
 }
 
 .cont2 {
     position: relative;
-    right: 60px;
-    bottom: 500px;
+    top: 50px;
+    right: 150px;
+    margin: 10px;
+    /* bottom: 500px; */
 }
 .navbar {
     display: inline-flex;

@@ -20,12 +20,23 @@
       <a class="nav-item nav-link active" href="/generalresource">General Resources</a>
       <a class="nav-item nav-link active" href="/discussion">Discussion Posts</a>
       <a class="nav-item nav-link active" href="/videos">Videos</a>
-      <a class="nav-item nav-link active" href="/signup">Sign-in/Sign-up</a>
+      {{!-- <a class="nav-item nav-link active" href="/signup">Sign-in/Sign-up</a> --}}
     </div>
   </div>
+          <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/signup">Sign-in/Sign-up</a>
+        {{/if}}
 </nav>
         {{{body}}}
 </main>
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
   </body>
   
   </html>
