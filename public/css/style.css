@@ -66,6 +66,7 @@ html {
     font-size: 20px;
     font-weight: 600;
 }
+
 .genhead {
     margin-bottom: 10px;
 }
@@ -76,4 +77,13 @@ html {
 .signupSide {
     margin-top: 30px;
     margin-bottom: 30px;
+
+.logform {
+    position: relative;
+    left: 200px;
+}
+
+.signform {
+    position: relative;
+    left: 300px;
 }
