@@ -34,14 +34,14 @@ const loginFormHandler = async (event) => {
     if (username && email && password) {
       const response = await fetch('/api/users/signup', {
         method: 'POST',
-        body: JSON.stringify({ username: username.value, email: email.value, password: password.value }),
+        body: JSON.stringify({ username: username.value.trim(), email: email.value.trim(), password: password.value.trim() }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        console.log(response);
         document.location.replace('/profile');
       } else {
+        console.log(response);
         alert("Failed to sign up");
       }
     }
