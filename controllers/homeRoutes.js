@@ -7,7 +7,40 @@ const handleBar = require("../views/homepage.handlebars")
 // HOME PAGE ROUTE - user lands here
 router.get('/', async (req, res) => {
   try {  // try looking for latest post
-    
+//     let newtechnews = new Object();          
+//     await fetch('https://hacker-news.firebaseio.com/v0/beststories/.json?print=pretty', {
+//      method: 'GET', //GET is the default.
+//       // include, *same-origin, omit
+//      redirect: 'follow', // manual, *follow, error
+//    })
+//      .then(function (response) {
+//        return response.json();
+//      })
+//      .then(function (data) {
+//        for(i = 0; i < 5; i++) {
+//          let id = data[i];
+//          fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`, {
+//            method: 'GET', //GET is the default.
+//             // include, *same-origin, omit
+//            redirect: 'follow', // manual, *follow, error
+//          })
+//            .then(function (response) {
+//              return response.json();
+//            })
+//            .then(function (data) {
+             
+//              // let head = data['title'];
+//              // let author = data['by'];
+//              // let datapoint = data['url'];
+//              // newtechnews = {head,author,datapoint};
+//              newtechnews.head = data.title;
+//              newtechnews.author = data.by;
+//              newtechnews.datapoint = data.url;
+             
+         
+         
+//        })
+//  }})
     // this is where we are going to do postdata
     res.render('homepage'); // render a page and send post data
   } catch (err) {
