@@ -7,7 +7,10 @@ const handleBar = require("../views/homepage.handlebars")
 // HOME PAGE ROUTE - user lands here
 router.get('/', async (req, res) => {
   try {  // try looking for latest post
+
     technews();
+
+
     // this is where we are going to do postdata
     res.render('homepage'); // render a page and send post data
   } catch (err) {
