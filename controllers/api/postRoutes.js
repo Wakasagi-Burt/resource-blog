@@ -19,7 +19,6 @@ router.post('/discussion', withAuth, async (req, res) => {
   }
 });
 
-
 //Sending the data to the model and view
 router.put('/:id', async (req, res) => {  //makes promise
   try {
