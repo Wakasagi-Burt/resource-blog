@@ -8,7 +8,7 @@ const handleBar = require("../views/homepage.handlebars")
 router.get('/', async (req, res) => {
   try {  // try looking for latest post
 
-    technews();
+    // technews();
 
 
     // this is where we are going to do postdata
