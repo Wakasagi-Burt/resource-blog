@@ -1,16 +1,16 @@
 const router = require('express').Router();
-const {Post} = require('../../models/Post');
+const {Post} = require('../../models/index');
 const withAuth = require('../../utils/auth');
 
 // Create a new Blog Post
-router.post('/discussion', withAuth, async (req, res) => {
+router.post('/user/discussion', withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({     // new postBlog object
       title: req.body.title,
       postdate: req.body.postdate,  // <-- we need to write a function on js file to insert the auto date
       content: req.body.content,
       username: req.body.username,          // read input
-      user_id: req.session.user_id,         // require user ID to post on blog
+              // require user ID to post on blog
     });
 
     res.status(200).json(newPost);          // successful post

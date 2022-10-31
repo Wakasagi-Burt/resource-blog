@@ -18,8 +18,7 @@ const hbs = exphbs.create({});
 
 const sess = {
 
-  secret: 'resource blog',
-  cookie: {},
+
 
   secret: 'resource blog',
   cookie: {
