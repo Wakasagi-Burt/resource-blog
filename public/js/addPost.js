@@ -1,22 +1,22 @@
 // This fucntion handles a Blog Post 
-async function postHandler (e) {
-    e.preventDefault();
+const postFormHandler = async  (event)=> {
+    event.preventDefault();
 
-    const title = document.querySelector('#title');
-    const postdate = document.querySelector('#postdate');
-    const content = document.querySelector('#content');
-    const username = document.querySelector('#username');
-    const user_id = document.querySelector('#user_id');
+    const title = document.querySelector('#title').value.trim();
+    const postdate = document.querySelector('#postdate').value.trim();
+    const content = document.querySelector('#content').value.trim();
+    const username = document.querySelector('#username').value.trim();
+    // const user_id = document.querySelector('#user_id');
 
-    const serverResponse = await fetch('/api/posts', {
+    const serverResponse =  fetch('./api/discussion', {
         method: 'POST',
         body: JSON.stringify(
         {
-            title,
-            postdate,
-            content,
-            username,
-            user_id,
+            title: title,
+            postdate: postdate,
+            content: content,
+            username: username,
+            
         }),
         headers: {
             'Content-Type': 'application/json',
@@ -30,4 +30,4 @@ async function postHandler (e) {
     }
 }
 
-document.querySelector('.new-post-form').addEventListener('submit', postHandler);
+document.querySelector('.new-post-form').addEventListener('submit', postFormHandler);
